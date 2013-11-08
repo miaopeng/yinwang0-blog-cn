@@ -1,0 +1,120 @@
+<html><head title="/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/email/iterators.py"><style type='text/css'>
+body { color: #666666; } 
+a {text-decoration: none; color: #5A82F7}
+table, th, td { border: 1px solid lightgrey; padding: 5px; corner: rounded; }
+.builtin {color: #B17E41;}
+.comment, .block-comment {color: #aaaaaa; font-style: italic;}
+.constant {color: #888888;}
+.decorator {color: #778899;}
+.doc-string {color: #aaaaaa;}
+.error {border-bottom: 1px solid red;}
+.field-name {color: #2e8b57;}
+.function {color: #4682b4;}
+.identifier {color: #8b7765;}
+.info {border-bottom: 1px dotted RoyalBlue;}
+.keyword {color: #0000cd;}
+.lineno {color: #aaaaaa;}
+.number {color: #483d8b;}
+.parameter {color: #777777;}
+.string {color: #999999;}
+.type-name {color: #4682b4;}
+.warning {border-bottom: 1px dotted orange;}
+</style>
+<script language="JavaScript" type="text/javascript">
+var highlighted = new Array();
+function highlight()
+{
+    // clear existing highlights
+    for (var i = 0; i < highlighted.length; i++) {
+        var elm = document.getElementById(highlighted[i]);
+        if (elm != null) {
+            elm.style.backgroundColor = 'white';
+        }
+    }
+    highlighted = new Array();
+    for (var i = 0; i < arguments.length; i++) {
+        var elm = document.getElementById(arguments[i]);
+        if (elm != null) {
+            elm.style.backgroundColor='gold';
+        }
+        highlighted.push(arguments[i]);
+    }
+} </script>
+</head>
+<body>
+<table width=100% border='1px solid gray'><tr><td valign='top'><ul>
+<li><a href='#iterators.__all__', onmouseover='highlight("iterators___all__")'><span class='identifier'>__all__</span></a></li><li><a href='#iterators.walk', onmouseover='highlight("iterators_walk")'><span class='function'>walk</span></a></li><li><a href='#iterators.body_line_iterator', onmouseover='highlight("iterators_body_line_iterator")'><span class='function'>body_line_iterator</span></a></li><li><a href='#iterators.typed_subpart_iterator', onmouseover='highlight("iterators_typed_subpart_iterator")'><span class='function'>typed_subpart_iterator</span></a></li><li><a href='#iterators._structure', onmouseover='highlight("iterators__structure")'><span class='function'>_structure</span></a></li></ul>
+</td><td><pre><span class='lineno'>1</span> # Copyright (C) 2001-2006 Python Software Foundation
+<span class='lineno'>2</span> # Author: Barry Warsaw
+<span class='lineno'>3</span> # Contact: email-sig@python.org
+<span class='lineno'>4</span> 
+<span class='lineno'>5</span> <span class='doc-string'>&quot;&quot;&quot;Various types of useful iterators and generators.&quot;&quot;&quot;</span>
+<span class='lineno'>6</span> 
+<span class='lineno'>7</span> <a name='iterators.__all__', id ='1254374360', title='iterators.__all__ :: [str]'>__all__</a> = [
+<span class='lineno'>8</span>     &#39;body_line_iterator&#39;,
+<span class='lineno'>9</span>     &#39;typed_subpart_iterator&#39;,
+<span class='lineno'>10</span>     &#39;walk&#39;,
+<span class='lineno'>11</span>     # Do not include _structure() since it&#39;s part of the debugging API.
+<span class='lineno'>12</span>     ]
+<span class='lineno'>13</span> 
+<span class='lineno'>14</span> import sys
+<span class='lineno'>15</span> from cStringIO import StringIO
+<span class='lineno'>16</span> 
+<span class='lineno'>17</span> 
+<span class='lineno'>18</span> 
+<span class='lineno'>19</span> # This function will become a method of the Message class
+<span class='lineno'>20</span> def <a name='iterators.walk', id ='1254377147', title='iterators.walk :: ? -> None'><span class='function'>walk</a></span>(<span class='parameter'><a name='iterators.walk@self', id ='1254377152', onmouseover='highlight("1254379009","1254378976","1254379137")', title='iterators.walk@self :: ?'>self</a></span>):
+<span class='lineno'>21</span>     <span class='doc-string'>&quot;&quot;&quot;Walk over the message tree, yielding each subpart.
+<span class='lineno'>22</span> 
+<span class='lineno'>23</span>     The walk is performed in depth-first order.  This method is a
+<span class='lineno'>24</span>     generator.
+<span class='lineno'>25</span>     &quot;&quot;&quot;</span>
+<span class='lineno'>26</span>     yield <a href='#iterators.walk@self', id ='1254378976', onmouseover='highlight(1254377152)', title='iterators.walk@self :: ?'>self</a>
+<span class='lineno'>27</span>     if <a href='#iterators.walk@self', id ='1254379009', onmouseover='highlight(1254377152)', title='iterators.walk@self :: ?'>self</a>.is_multipart():
+<span class='lineno'>28</span>         for <a name='iterators.walk&subpart', id ='1254379105', onmouseover='highlight(1254379943)', title='iterators.walk&subpart :: ?'>subpart</a> in <a href='#iterators.walk@self', id ='1254379137', onmouseover='highlight(1254377152)', title='iterators.walk@self :: ?'>self</a>.get_payload():
+<span class='lineno'>29</span>             for <a name='iterators.walk&subsubpart', id ='1254379257', onmouseover='highlight(1254380065)', title='iterators.walk&subsubpart :: ?'>subsubpart</a> in <a href='#iterators.walk&subpart', id ='1254379943', onmouseover='highlight(1254379105)', title='iterators.walk&subpart :: ?'>subpart</a>.walk():
+<span class='lineno'>30</span>                 yield <a href='#iterators.walk&subsubpart', id ='1254380065', onmouseover='highlight(1254379257)', title='iterators.walk&subsubpart :: ?'>subsubpart</a>
+<span class='lineno'>31</span> 
+<span class='lineno'>32</span> 
+<span class='lineno'>33</span> 
+<span class='lineno'>34</span> # These two functions are imported into the Iterators.py interface module.
+<span class='lineno'>35</span> def <a name='iterators.body_line_iterator', id ='1254381020', title='iterators.body_line_iterator :: (?, ?) -> None'><span class='function'>body_line_iterator</span></a>(<span class='parameter'><a name='iterators.body_line_iterator@msg', id ='1254381081', onmouseover='highlight(230893749)', title='iterators.body_line_iterator@msg :: ?'>msg</span></a>, <span class='parameter'><a name='iterators.body_line_iterator@decode', id ='1254381086', title='iterators.body_line_iterator@decode :: ?'>decode</a></span>=<a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='1254381114', onmouseover='highlight(2016665419)', title='__builtin__.False :: ?'>False</a>):
+<span class='lineno'>36</span>     <span class='doc-string'>&quot;&quot;&quot;Iterate over the parts, returning string payloads line-by-line.
+<span class='lineno'>37</span> 
+<span class='lineno'>38</span>     Optional decode (default False) is passed through to .get_payload().
+<span class='lineno'>39</span>     &quot;&quot;&quot;</span>
+<span class='lineno'>40</span>     for <a name='iterators.body_line_iterator&subpart', id ='230893717', onmouseover='highlight(230893842)', title='iterators.body_line_iterator&subpart :: ?'>subpart</a> in <a href='#iterators.body_line_iterator@msg', id ='230893749', onmouseover='highlight(1254381081)', title='iterators.body_line_iterator@msg :: ?'>msg</a>.walk():
+<span class='lineno'>41</span>         <a name='iterators.body_line_iterator&payload', id ='230893811', onmouseover='highlight("230894836","230894655")', title='iterators.body_line_iterator&payload :: ?'><span class='identifier'>payload</span></a> = <a href='#iterators.body_line_iterator&subpart', id ='230893842', onmouseover='highlight(230893717)', title='iterators.body_line_iterator&subpart :: ?'>subpart</a>.get_payload(decode=decode)
+<span class='lineno'>42</span>         if <a href='http://docs.python.org/library/functions.html#isinstance', id ='230894623', onmouseover='highlight(37741720)', title='__builtin__.isinstance :: ? -> int'>isinstance</a>(<a href='#iterators.body_line_iterator&payload', id ='230894655', onmouseover='highlight(230893811)', title='iterators.body_line_iterator&payload :: ?'>payload</a>, <a href='http://docs.python.org/library/functions.html#basestring', id ='230894685', onmouseover='highlight(980990405)', title='__builtin__.basestring :: ? -> ?'>basestring</a>):
+<span class='lineno'>43</span>             for <a name='iterators.body_line_iterator&line', id ='230894777', onmouseover='highlight(230895582)', title='iterators.body_line_iterator&line :: ?'>line</a> in StringIO(<a href='#iterators.body_line_iterator&payload', id ='230894836', onmouseover='highlight(230893811)', title='iterators.body_line_iterator&payload :: ?'>payload</a>):
+<span class='lineno'>44</span>                 yield <a href='#iterators.body_line_iterator&line', id ='230895582', onmouseover='highlight(230894777)', title='iterators.body_line_iterator&line :: ?'>line</a>
+<span class='lineno'>45</span> 
+<span class='lineno'>46</span> 
+<span class='lineno'>47</span> def <span class='function'><a name='iterators.typed_subpart_iterator', id ='230895614', title='iterators.typed_subpart_iterator :: (?, str, ?) -> None'>typed_subpart_iterator</a></span>(<a name='iterators.typed_subpart_iterator@msg', id ='230895700', onmouseover='highlight(230898619)', title='iterators.typed_subpart_iterator@msg :: ?'><span class='parameter'>msg</span></a>, <a name='iterators.typed_subpart_iterator@maintype', id ='230895705', onmouseover='highlight(230899453)', title='iterators.typed_subpart_iterator@maintype :: str'><span class='parameter'>maintype</a></span>=&#39;text&#39;, <a name='iterators.typed_subpart_iterator@subtype', id ='230895764', onmouseover='highlight("230899520","230900328")', title='iterators.typed_subpart_iterator@subtype :: ?'><span class='parameter'>subtype</a></span>=<a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='230895793', onmouseover='highlight(2016665419)', title='__builtin__.None :: ?'>None</a>):
+<span class='lineno'>48</span>     <span class='doc-string'>&quot;&quot;&quot;Iterate over the subparts with a given MIME type.
+<span class='lineno'>49</span> 
+<span class='lineno'>50</span>     Use `maintype&#39; as the main MIME type to match against; this defaults to
+<span class='lineno'>51</span>     &quot;text&quot;.  Optional `subtype&#39; is the MIME subtype to match against; if
+<span class='lineno'>52</span>     omitted, only the main type is matched.
+<span class='lineno'>53</span>     &quot;&quot;&quot;</span>
+<span class='lineno'>54</span>     for <a name='iterators.typed_subpart_iterator&subpart', id ='230898587', onmouseover='highlight("230900443","230898684","230899581")', title='iterators.typed_subpart_iterator&subpart :: ?'>subpart</a> in <a href='#iterators.typed_subpart_iterator@msg', id ='230898619', onmouseover='highlight(230895700)', title='iterators.typed_subpart_iterator@msg :: ?'>msg</a>.walk():
+<span class='lineno'>55</span>         if <a href='#iterators.typed_subpart_iterator&subpart', id ='230898684', onmouseover='highlight(230898587)', title='iterators.typed_subpart_iterator&subpart :: ?'>subpart</a>.get_content_maintype() == <a href='#iterators.typed_subpart_iterator@maintype', id ='230899453', onmouseover='highlight(230895705)', title='iterators.typed_subpart_iterator@maintype :: str'>maintype</a>:
+<span class='lineno'>56</span>             if <a href='#iterators.typed_subpart_iterator@subtype', id ='230899520', onmouseover='highlight(230895764)', title='iterators.typed_subpart_iterator@subtype :: ?'>subtype</a> is <span class='builtin'><a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='230899552', onmouseover='highlight(2016665419)', title='__builtin__.None :: ?'>None</span></a> or <a href='#iterators.typed_subpart_iterator&subpart', id ='230899581', onmouseover='highlight(230898587)', title='iterators.typed_subpart_iterator&subpart :: ?'>subpart</a>.get_content_subtype() == <a href='#iterators.typed_subpart_iterator@subtype', id ='230900328', onmouseover='highlight(230895764)', title='iterators.typed_subpart_iterator@subtype :: ?'>subtype</a>:
+<span class='lineno'>57</span>                 yield <a href='#iterators.typed_subpart_iterator&subpart', id ='230900443', onmouseover='highlight(230898587)', title='iterators.typed_subpart_iterator&subpart :: ?'>subpart</a>
+<span class='lineno'>58</span> 
+<span class='lineno'>59</span> 
+<span class='lineno'>60</span> 
+<span class='lineno'>61</span> def <a name='iterators._structure', id ='230900480', onmouseover='highlight(230924501)', title='iterators._structure :: (?, {File | PseudoOutputFile | _SpoofOut | StreamRecoder | FileDelegate | Gulp | BitBucket | StringIO}, int, ?) -> None'><span class='function'>_structure</span></a>(<span class='parameter'><a name='iterators._structure@msg', id ='230900512', onmouseover='highlight("230924407","230902365","230923422","230923608")', title='iterators._structure@msg :: ?'>msg</a></span>, <span class='parameter'><a name='iterators._structure@fp', id ='230900538', onmouseover='highlight("230924563","230901438")', title='iterators._structure@fp :: {File | PseudoOutputFile | _SpoofOut | StreamRecoder | FileDelegate | Gulp | BitBucket | StringIO}'>fp</span></a>=<a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='230900541', onmouseover='highlight(2016665419)', title='__builtin__.None :: ?'>None</a>, <a name='iterators._structure@level', id ='230900568', onmouseover='highlight("230924567","230902247")', title='iterators._structure@level :: int'><span class='parameter'>level</a></span>=<span class='number'>0</span>, <a name='iterators._structure@include_default', id ='230900598', onmouseover='highlight("230902459","230924597")', title='iterators._structure@include_default :: ?'><span class='parameter'>include_default</span></a>=<a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='230901286', onmouseover='highlight(2016665419)', title='__builtin__.False :: ?'>False</a>):
+<span class='lineno'>62</span>     <span class='doc-string'>&quot;&quot;&quot;A handy debugging aid&quot;&quot;&quot;</span>
+<span class='lineno'>63</span>     if <a href='#iterators._structure@fp', id ='230901438', onmouseover='highlight("230900538","230901500")', title='iterators._structure@fp :: {File | PseudoOutputFile | _SpoofOut | StreamRecoder | FileDelegate | Gulp | BitBucket | StringIO}'>fp</a> is <span class='builtin'><a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='230901444', onmouseover='highlight(2016665419)', title='__builtin__.None :: ?'>None</span></a>:
+<span class='lineno'>64</span>         <a name='iterators._structure@fp', id ='230901500', onmouseover='highlight("230924563","230901438")', title='iterators._structure@fp :: {File | PseudoOutputFile | _SpoofOut | StreamRecoder | FileDelegate | Gulp | BitBucket | StringIO}'>fp</a> = <a href='http://docs.python.org/library/sys.html', id ='230901505', onmouseover='highlight(609831392)', title='iterators.sys :: sys'>sys</a>.stdout
+<span class='lineno'>65</span>     <span class='identifier'><a name='iterators._structure&tab', id ='230901562', onmouseover='highlight(230902338)', title='iterators._structure&tab :: str'>tab</a></span> = &#39; &#39; * (<a href='#iterators._structure@level', id ='230902247', onmouseover='highlight(230900568)', title='iterators._structure@level :: int'>level</a> * <span class='number'>4</span>)
+<span class='lineno'>66</span>     print &gt;&gt; fp, <a href='#iterators._structure&tab', id ='230902338', onmouseover='highlight(230901562)', title='iterators._structure&tab :: str'>tab</a> + <a href='#iterators._structure@msg', id ='230902365', onmouseover='highlight(230900512)', title='iterators._structure@msg :: ?'>msg</a>.get_content_type(),
+<span class='lineno'>67</span>     if <a href='#iterators._structure@include_default', id ='230902459', onmouseover='highlight(230900598)', title='iterators._structure@include_default :: ?'>include_default</a>:
+<span class='lineno'>68</span>         print &gt;&gt; fp, &#39;[%s]&#39; % <a href='#iterators._structure@msg', id ='230923422', onmouseover='highlight(230900512)', title='iterators._structure@msg :: ?'>msg</a>.get_default_type()
+<span class='lineno'>69</span>     else:
+<span class='lineno'>70</span>         print &gt;&gt; fp
+<span class='lineno'>71</span>     if <a href='#iterators._structure@msg', id ='230923608', onmouseover='highlight(230900512)', title='iterators._structure@msg :: ?'>msg</a>.is_multipart():
+<span class='lineno'>72</span>         for <a name='iterators._structure&subpart', id ='230924375', onmouseover='highlight(230924533)', title='iterators._structure&subpart :: ?'>subpart</a> in <a href='#iterators._structure@msg', id ='230924407', onmouseover='highlight(230900512)', title='iterators._structure@msg :: ?'>msg</a>.get_payload():
+<span class='lineno'>73</span>             <a href='#iterators._structure', id ='230924501', onmouseover='highlight(230900480)', title='iterators._structure :: (?, {File | PseudoOutputFile | _SpoofOut | StreamRecoder | FileDelegate | Gulp | BitBucket | StringIO}, int, ?) -> None'>_structure</a>(<a href='#iterators._structure&subpart', id ='230924533', onmouseover='highlight(230924375)', title='iterators._structure&subpart :: ?'>subpart</a>, <a href='#iterators._structure@fp', id ='230924563', onmouseover='highlight("230900538","230901500")', title='iterators._structure@fp :: {File | PseudoOutputFile | _SpoofOut | StreamRecoder | FileDelegate | Gulp | BitBucket | StringIO}'>fp</a>, <a href='#iterators._structure@level', id ='230924567', onmouseover='highlight(230900568)', title='iterators._structure@level :: int'>level</a>+<span class='number'>1</span>, <a href='#iterators._structure@include_default', id ='230924597', onmouseover='highlight(230900598)', title='iterators._structure@include_default :: ?'>include_default</a>)
+</pre></td></tr></table></body></html>

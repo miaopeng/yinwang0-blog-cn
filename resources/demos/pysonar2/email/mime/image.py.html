@@ -1,0 +1,95 @@
+<html><head title="/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/email/mime/image.py"><style type='text/css'>
+body { color: #666666; } 
+a {text-decoration: none; color: #5A82F7}
+table, th, td { border: 1px solid lightgrey; padding: 5px; corner: rounded; }
+.builtin {color: #B17E41;}
+.comment, .block-comment {color: #aaaaaa; font-style: italic;}
+.constant {color: #888888;}
+.decorator {color: #778899;}
+.doc-string {color: #aaaaaa;}
+.error {border-bottom: 1px solid red;}
+.field-name {color: #2e8b57;}
+.function {color: #4682b4;}
+.identifier {color: #8b7765;}
+.info {border-bottom: 1px dotted RoyalBlue;}
+.keyword {color: #0000cd;}
+.lineno {color: #aaaaaa;}
+.number {color: #483d8b;}
+.parameter {color: #777777;}
+.string {color: #999999;}
+.type-name {color: #4682b4;}
+.warning {border-bottom: 1px dotted orange;}
+</style>
+<script language="JavaScript" type="text/javascript">
+var highlighted = new Array();
+function highlight()
+{
+    // clear existing highlights
+    for (var i = 0; i < highlighted.length; i++) {
+        var elm = document.getElementById(highlighted[i]);
+        if (elm != null) {
+            elm.style.backgroundColor = 'white';
+        }
+    }
+    highlighted = new Array();
+    for (var i = 0; i < arguments.length; i++) {
+        var elm = document.getElementById(arguments[i]);
+        if (elm != null) {
+            elm.style.backgroundColor='gold';
+        }
+        highlighted.push(arguments[i]);
+    }
+} </script>
+</head>
+<body>
+<table width=100% border='1px solid gray'><tr><td valign='top'><ul>
+<li><a href='#imghdr', onmouseover='highlight("imghdr")'>imghdr</a></li><li><a href='#image.__all__', onmouseover='highlight("image___all__")'><span class='identifier'>__all__</span></a></li><li><a href='#image.MIMEImage', onmouseover='highlight("image_MIMEImage")'><span class='type-name'>MIMEImage</span></a><ul>
+<li><a href='#image.MIMEImage.__init__', onmouseover='highlight("image_MIMEImage___init__")'><span class='function'>__init__</span></a></li></ul>
+</li></ul>
+</td><td><pre><span class='lineno'>1</span> <span class='parameter'></span><span class='parameter'></span># Copyr<a href='/Users/yinwang/results/html/imghdr.py.html#imghdr', id ='733242311', onmouseover='highlight(733242311)', title='imghdr :: imghdr'><a name='imghdr', id ='733242311', onmouseover='highlight("182106723","733242311")', title='imghdr :: imghdr'>ight </a>(</a>C) 2001-2006 Python Software Foundation
+<span class='lineno'>2</span> # Author: Barry Warsaw
+<span class='lineno'>3</span> # Contact: email-sig@python.org
+<span class='lineno'>4</span> 
+<span class='lineno'>5</span> <span class='doc-string'>&quot;&quot;&quot;Class representing image/* type MIME documents.&quot;&quot;&quot;</span>
+<span class='lineno'>6</span> 
+<span class='lineno'>7</span> <a name='image.__all__', id ='271220287', title='image.__all__ :: [str]'>__all__</a> = [&#39;MIMEImage&#39;]
+<span class='lineno'>8</span> 
+<span class='lineno'>9</span> import imghdr
+<span class='lineno'>10</span> 
+<span class='lineno'>11</span> from email import encoders
+<span class='lineno'>12</span> from email.mime.nonmultipart import MIMENonMultipart
+<span class='lineno'>13</span> 
+<span class='lineno'>14</span> 
+<span class='lineno'>15</span> 
+<span class='lineno'>16</span> class <a name='image.MIMEImage', id ='271221341', title='image.MIMEImage :: <MIMEImage>'><span class='type-name'>MIMEImage</a></span>(MIMENonMultipart):
+<span class='lineno'>17</span>     <span class='doc-string'>&quot;&quot;&quot;Class for generating image/* type MIME documents.&quot;&quot;&quot;</span>
+<span class='lineno'>18</span> 
+<span class='lineno'>19</span>     def <a name='image.MIMEImage.__init__', id ='271222300', title='image.MIMEImage.__init__ :: (MIMEImage, ?, ?, ?) -> None'><span class='function'>__init__</a></span>(<a name='image.MIMEImage.__init__@self', id ='271222981', onmouseover='highlight("182104777","182105577","182104647")', title='image.MIMEImage.__init__@self :: MIMEImage'><span class='parameter'>self</span></a>, <a name='image.MIMEImage.__init__@_imagedata', id ='271222987', onmouseover='highlight("182104739","182106663")', title='image.MIMEImage.__init__@_imagedata :: ?'><span class='parameter'>_imagedata</span></a>, <a name='image.MIMEImage.__init__@_subtype', id ='271223020', onmouseover='highlight("182105520","182107499","182106577")', title='image.MIMEImage.__init__@_subtype :: ?'><a name='image.MIMEImage.__init__@_subtype', id ='271223020', title='image.MIMEImage.__init__@_subtype :: ?'><span class='parameter'>_subtype</a></a></span>=<a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='271223050', onmouseover='highlight(2016665419)', title='__builtin__.None :: ?'>None</a>,
+<span class='lineno'>20</span>                  <span class='parameter'><a name='image.MIMEImage.__init__@_encoder', id ='271223136', onmouseover='highlight(182104677)', title='image.MIMEImage.__init__@_encoder :: ?'>_encoder</a></span>=encoders.encode_base64, **_params):
+<span class='lineno'>21</span>         <span class='doc-string'>&quot;&quot;&quot;Create an image/* type MIME document.
+<span class='lineno'>22</span> 
+<span class='lineno'>23</span>         _imagedata is a string containing the raw image data.  If this data
+<span class='lineno'>24</span>         can be decoded by the standard Python `imghdr&#39; module, then the
+<span class='lineno'>25</span>         subtype will be automatically included in the Content-Type header.
+<span class='lineno'>26</span>         Otherwise, you can specify the specific image subtype via the _subtype
+<span class='lineno'>27</span>         parameter.
+<span class='lineno'>28</span> 
+<span class='lineno'>29</span>         _encoder is a function which will perform the actual encoding for
+<span class='lineno'>30</span>         transport of the image data.  It takes one argument, which is this
+<span class='lineno'>31</span>         Image instance.  It should use get_payload() and set_payload() to
+<span class='lineno'>32</span>         change the payload to the encoded form.  It should also add any
+<span class='lineno'>33</span>         Content-Transfer-Encoding or other headers to the message as
+<span class='lineno'>34</span>         necessary.  The default encoding is Base64.
+<span class='lineno'>35</span> 
+<span class='lineno'>36</span>         Any additional keyword arguments are passed to the base class
+<span class='lineno'>37</span>         constructor, which turns them into parameters on the Content-Type
+<span class='lineno'>38</span>         header.
+<span class='lineno'>39</span>         &quot;&quot;&quot;</span>
+<span class='lineno'>40</span>         if <a href='#image.MIMEImage.__init__@_subtype', id ='182107499', onmouseover='highlight("182107406","271223020")', title='image.MIMEImage.__init__@_subtype :: ?'>_subtype</a> is <a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='182107445', onmouseover='highlight(2016665419)', title='__builtin__.None :: ?'><span class='builtin'>None</span></a>:
+<span class='lineno'>41</span>             <a name='image.MIMEImage.__init__@_subtype', id ='182107406', onmouseover='highlight("182105520","182107499","182106577")', title='image.MIMEImage.__init__@_subtype :: ?'><span class='parameter'>_subtype</span></a> = <a href='/Users/yinwang/results/html/imghdr.py.html#imghdr', id ='182106723', onmouseover='highlight(733242311)', title='imghdr :: imghdr'>imghdr</a>.<a href='/Users/yinwang/results/html/imghdr.py.html#imghdr.what', id ='182106695', onmouseover='highlight(1576501343)', title='imghdr.what :: (<list>, ?) -> ?'>what</a>(<a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='182106669', onmouseover='highlight(2016665419)', title='__builtin__.None :: ?'><span class='builtin'>None</a></span>, <a href='#image.MIMEImage.__init__@_imagedata', id ='182106663', onmouseover='highlight(271222987)', title='image.MIMEImage.__init__@_imagedata :: ?'>_imagedata</a>)
+<span class='lineno'>42</span>         if <a href='#image.MIMEImage.__init__@_subtype', id ='182106577', onmouseover='highlight("182107406","271223020")', title='image.MIMEImage.__init__@_subtype :: ?'>_subtype</a> is <span class='builtin'><a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='182106544', onmouseover='highlight(2016665419)', title='__builtin__.None :: ?'>None</span></a>:
+<span class='lineno'>43</span>             raise <a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='182106478', onmouseover='highlight(2016665419)', title='__builtin__.TypeError :: <TypeError>'>TypeError</a>(&#39;Could not guess image MIME subtype&#39;)
+<span class='lineno'>44</span>         MIMENonMultipart.__init__(<a href='#image.MIMEImage.__init__@self', id ='182105577', onmouseover='highlight(271222981)', title='image.MIMEImage.__init__@self :: MIMEImage'>self</a>, &#39;image&#39;, <a href='#image.MIMEImage.__init__@_subtype', id ='182105520', onmouseover='highlight("182107406","271223020")', title='image.MIMEImage.__init__@_subtype :: ?'>_subtype</a>, **_params)
+<span class='lineno'>45</span>         <a href='#image.MIMEImage.__init__@self', id ='182104777', onmouseover='highlight(271222981)', title='image.MIMEImage.__init__@self :: MIMEImage'>self</a>.set_payload(<a href='#image.MIMEImage.__init__@_imagedata', id ='182104739', onmouseover='highlight(271222987)', title='image.MIMEImage.__init__@_imagedata :: ?'>_imagedata</a>)
+<span class='lineno'>46</span>         <a href='#image.MIMEImage.__init__@_encoder', id ='182104677', onmouseover='highlight(271223136)', title='image.MIMEImage.__init__@_encoder :: ?'>_encoder</a>(<a href='#image.MIMEImage.__init__@self', id ='182104647', onmouseover='highlight(271222981)', title='image.MIMEImage.__init__@self :: MIMEImage'>self</a>)
+</pre></td></tr></table></body></html>

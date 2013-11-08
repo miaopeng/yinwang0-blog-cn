@@ -1,0 +1,96 @@
+<html><head title="/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/email/mime/multipart.py"><style type='text/css'>
+body { color: #666666; } 
+a {text-decoration: none; color: #5A82F7}
+table, th, td { border: 1px solid lightgrey; padding: 5px; corner: rounded; }
+.builtin {color: #B17E41;}
+.comment, .block-comment {color: #aaaaaa; font-style: italic;}
+.constant {color: #888888;}
+.decorator {color: #778899;}
+.doc-string {color: #aaaaaa;}
+.error {border-bottom: 1px solid red;}
+.field-name {color: #2e8b57;}
+.function {color: #4682b4;}
+.identifier {color: #8b7765;}
+.info {border-bottom: 1px dotted RoyalBlue;}
+.keyword {color: #0000cd;}
+.lineno {color: #aaaaaa;}
+.number {color: #483d8b;}
+.parameter {color: #777777;}
+.string {color: #999999;}
+.type-name {color: #4682b4;}
+.warning {border-bottom: 1px dotted orange;}
+</style>
+<script language="JavaScript" type="text/javascript">
+var highlighted = new Array();
+function highlight()
+{
+    // clear existing highlights
+    for (var i = 0; i < highlighted.length; i++) {
+        var elm = document.getElementById(highlighted[i]);
+        if (elm != null) {
+            elm.style.backgroundColor = 'white';
+        }
+    }
+    highlighted = new Array();
+    for (var i = 0; i < arguments.length; i++) {
+        var elm = document.getElementById(arguments[i]);
+        if (elm != null) {
+            elm.style.backgroundColor='gold';
+        }
+        highlighted.push(arguments[i]);
+    }
+} </script>
+</head>
+<body>
+<table width=100% border='1px solid gray'><tr><td valign='top'><ul>
+<li><a href='#multipart.__all__', onmouseover='highlight("multipart___all__")'><span class='identifier'>__all__</span></a></li><li><a href='#multipart.MIMEMultipart', onmouseover='highlight("multipart_MIMEMultipart")'><span class='type-name'>MIMEMultipart</span></a><ul>
+<li><a href='#multipart.MIMEMultipart.__init__', onmouseover='highlight("multipart_MIMEMultipart___init__")'><span class='function'>__init__</span></a></li></ul>
+</li></ul>
+</td><td><pre><span class='lineno'>1</span> <span class='parameter'></span><span class='parameter'></span># Copyright (C) 2002-2006 Python Software Foundation
+<span class='lineno'>2</span> # Author: Barry Warsaw
+<span class='lineno'>3</span> # Contact: email-sig@python.org
+<span class='lineno'>4</span> 
+<span class='lineno'>5</span> <span class='doc-string'>&quot;&quot;&quot;Base class for MIME multipart/* type messages.&quot;&quot;&quot;</span>
+<span class='lineno'>6</span> 
+<span class='lineno'>7</span> <a name='multipart.__all__', id ='1918033201', title='multipart.__all__ :: [str]'>__all__</a> = [&#39;MIMEMultipart&#39;]
+<span class='lineno'>8</span> 
+<span class='lineno'>9</span> from email.mime.base import MIMEBase
+<span class='lineno'>10</span> 
+<span class='lineno'>11</span> 
+<span class='lineno'>12</span> 
+<span class='lineno'>13</span> class <span class='type-name'><a name='multipart.MIMEMultipart', id ='1918032327', title='multipart.MIMEMultipart :: <MIMEMultipart>'>MIMEMultipart</a></span>(MIMEBase):
+<span class='lineno'>14</span>     <span class='doc-string'>&quot;&quot;&quot;Base class for MIME multipart/* type messages.&quot;&quot;&quot;</span>
+<span class='lineno'>15</span> 
+<span class='lineno'>16</span>     def <span class='function'><a name='multipart.MIMEMultipart.__init__', id ='1918031375', title='multipart.MIMEMultipart.__init__ :: (MIMEMultipart, str, ?, ?) -> None'>__init__</a></span>(<span class='parameter'><a name='multipart.MIMEMultipart.__init__@self', id ='1918031366', onmouseover='highlight("670510953","670512036","670508286","670511232")', title='multipart.MIMEMultipart.__init__@self :: MIMEMultipart'>self</span></a>, <a name='multipart.MIMEMultipart.__init__@_subtype', id ='1918031339', onmouseover='highlight(670508347)', title='multipart.MIMEMultipart.__init__@_subtype :: str'><span class='parameter'>_subtype</a></span>=&#39;mixed&#39;, <a name='multipart.MIMEMultipart.__init__@boundary', id ='1918031279', onmouseover='highlight("670511972","670512096")', title='multipart.MIMEMultipart.__init__@boundary :: ?'><span class='parameter'>boundary</span></a>=<a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='1918031249', onmouseover='highlight(2016665419)', title='__builtin__.None :: ?'>None</a>, <span class='parameter'><a name='multipart.MIMEMultipart.__init__@_subparts', id ='1918031243', onmouseover='highlight("670511163","670511047")', title='multipart.MIMEMultipart.__init__@_subparts :: ?'>_subparts</span></a>=<a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='1918031212', onmouseover='highlight(2016665419)', title='__builtin__.None :: ?'>None</a>,
+<span class='lineno'>17</span>                  **_params):
+<span class='lineno'>18</span>         <span class='doc-string'>&quot;&quot;&quot;Creates a multipart/* type message.
+<span class='lineno'>19</span> 
+<span class='lineno'>20</span>         By default, creates a multipart/mixed message, with proper
+<span class='lineno'>21</span>         Content-Type and MIME-Version headers.
+<span class='lineno'>22</span> 
+<span class='lineno'>23</span>         _subtype is the subtype of the multipart content type, defaulting to
+<span class='lineno'>24</span>         `mixed&#39;.
+<span class='lineno'>25</span> 
+<span class='lineno'>26</span>         boundary is the multipart boundary string.  By default it is
+<span class='lineno'>27</span>         calculated as needed.
+<span class='lineno'>28</span> 
+<span class='lineno'>29</span>         _subparts is a sequence of initial subparts for the payload.  It
+<span class='lineno'>30</span>         must be an iterable object, such as a list.  You can always
+<span class='lineno'>31</span>         attach new subparts to the message by using the attach() method.
+<span class='lineno'>32</span> 
+<span class='lineno'>33</span>         Additional parameters for the Content-Type header are taken from the
+<span class='lineno'>34</span>         keyword arguments (or passed into the _params argument).
+<span class='lineno'>35</span>         &quot;&quot;&quot;</span>
+<span class='lineno'>36</span>         MIMEBase.__init__(<a href='#multipart.MIMEMultipart.__init__@self', id ='670508286', onmouseover='highlight(1918031366)', title='multipart.MIMEMultipart.__init__@self :: MIMEMultipart'>self</a>, &#39;multipart&#39;, <a href='#multipart.MIMEMultipart.__init__@_subtype', id ='670508347', onmouseover='highlight(1918031339)', title='multipart.MIMEMultipart.__init__@_subtype :: str'>_subtype</a>, **_params)
+<span class='lineno'>37</span> 
+<span class='lineno'>38</span>         # Initialise _payload to an empty list as the Message superclass&#39;s
+<span class='lineno'>39</span>         # implementation of is_multipart assumes that _payload is a list for
+<span class='lineno'>40</span>         # multipart messages.
+<span class='lineno'>41</span>         <a href='#multipart.MIMEMultipart.__init__@self', id ='670510953', onmouseover='highlight(1918031366)', title='multipart.MIMEMultipart.__init__@self :: MIMEMultipart'>self</a>.<a name='multipart.MIMEMultipart._payload', id ='670510979', title='multipart.MIMEMultipart._payload :: [?]'>_payload</a> = []
+<span class='lineno'>42</span> 
+<span class='lineno'>43</span>         if <a href='#multipart.MIMEMultipart.__init__@_subparts', id ='670511047', onmouseover='highlight(1918031243)', title='multipart.MIMEMultipart.__init__@_subparts :: ?'>_subparts</a>:
+<span class='lineno'>44</span>             for <a name='multipart.MIMEMultipart.__init__&p', id ='670511137', onmouseover='highlight(670511916)', title='multipart.MIMEMultipart.__init__&p :: ?'>p</a> in <a href='#multipart.MIMEMultipart.__init__@_subparts', id ='670511163', onmouseover='highlight(1918031243)', title='multipart.MIMEMultipart.__init__@_subparts :: ?'>_subparts</a>:
+<span class='lineno'>45</span>                 <a href='#multipart.MIMEMultipart.__init__@self', id ='670511232', onmouseover='highlight(1918031366)', title='multipart.MIMEMultipart.__init__@self :: MIMEMultipart'>self</a>.attach(<a href='#multipart.MIMEMultipart.__init__&p', id ='670511916', onmouseover='highlight(670511137)', title='multipart.MIMEMultipart.__init__&p :: ?'>p</a>)
+<span class='lineno'>46</span>         if <a href='#multipart.MIMEMultipart.__init__@boundary', id ='670511972', onmouseover='highlight(1918031279)', title='multipart.MIMEMultipart.__init__@boundary :: ?'>boundary</a>:
+<span class='lineno'>47</span>             <a href='#multipart.MIMEMultipart.__init__@self', id ='670512036', onmouseover='highlight(1918031366)', title='multipart.MIMEMultipart.__init__@self :: MIMEMultipart'>self</a>.set_boundary(<a href='#multipart.MIMEMultipart.__init__@boundary', id ='670512096', onmouseover='highlight(1918031279)', title='multipart.MIMEMultipart.__init__@boundary :: ?'>boundary</a>)
+</pre></td></tr></table></body></html>

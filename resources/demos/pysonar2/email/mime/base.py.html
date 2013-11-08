@@ -1,0 +1,75 @@
+<html><head title="/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/email/mime/base.py"><style type='text/css'>
+body { color: #666666; } 
+a {text-decoration: none; color: #5A82F7}
+table, th, td { border: 1px solid lightgrey; padding: 5px; corner: rounded; }
+.builtin {color: #B17E41;}
+.comment, .block-comment {color: #aaaaaa; font-style: italic;}
+.constant {color: #888888;}
+.decorator {color: #778899;}
+.doc-string {color: #aaaaaa;}
+.error {border-bottom: 1px solid red;}
+.field-name {color: #2e8b57;}
+.function {color: #4682b4;}
+.identifier {color: #8b7765;}
+.info {border-bottom: 1px dotted RoyalBlue;}
+.keyword {color: #0000cd;}
+.lineno {color: #aaaaaa;}
+.number {color: #483d8b;}
+.parameter {color: #777777;}
+.string {color: #999999;}
+.type-name {color: #4682b4;}
+.warning {border-bottom: 1px dotted orange;}
+</style>
+<script language="JavaScript" type="text/javascript">
+var highlighted = new Array();
+function highlight()
+{
+    // clear existing highlights
+    for (var i = 0; i < highlighted.length; i++) {
+        var elm = document.getElementById(highlighted[i]);
+        if (elm != null) {
+            elm.style.backgroundColor = 'white';
+        }
+    }
+    highlighted = new Array();
+    for (var i = 0; i < arguments.length; i++) {
+        var elm = document.getElementById(arguments[i]);
+        if (elm != null) {
+            elm.style.backgroundColor='gold';
+        }
+        highlighted.push(arguments[i]);
+    }
+} </script>
+</head>
+<body>
+<table width=100% border='1px solid gray'><tr><td valign='top'><ul>
+<li><a href='#base.__all__', onmouseover='highlight("base___all__")'><span class='identifier'>__all__</span></a></li><li><a href='#base.MIMEBase', onmouseover='highlight("base_MIMEBase")'><span class='type-name'>MIMEBase</span></a><ul>
+<li><a href='#base.MIMEBase.__init__', onmouseover='highlight("base_MIMEBase___init__")'><span class='function'>__init__</span></a></li></ul>
+</li></ul>
+</td><td><pre><span class='lineno'>1</span> </span></span><span class='parameter'><span class='parameter'># Copyright (C) 2001-2006 Python Software Foundation
+<span class='lineno'>2</span> # Author: Barry Warsaw
+<span class='lineno'>3</span> # Contact: email-sig@python.org
+<span class='lineno'>4</span> 
+<span class='lineno'>5</span> <span class='doc-string'>&quot;&quot;&quot;Base class for MIME specializations.&quot;&quot;&quot;</span>
+<span class='lineno'>6</span> 
+<span class='lineno'>7</span> <a name='base.__all__', id ='863242365', title='base.__all__ :: [str]'>__all__</a> = [&#39;MIMEBase&#39;]
+<span class='lineno'>8</span> 
+<span class='lineno'>9</span> from email import message
+<span class='lineno'>10</span> 
+<span class='lineno'>11</span> 
+<span class='lineno'>12</span> 
+<span class='lineno'>13</span> class <a name='base.MIMEBase', id ='863243202', title='base.MIMEBase :: <MIMEBase>'><span class='type-name'>MIMEBase</a></span>(message.Message):
+<span class='lineno'>14</span>     <span class='doc-string'>&quot;&quot;&quot;Base class for MIME specializations.&quot;&quot;&quot;</span>
+<span class='lineno'>15</span> 
+<span class='lineno'>16</span>     def <a name='base.MIMEBase.__init__', id ='863243453', title='base.MIMEBase.__init__ :: (MIMEBase, ?, ?) -> None'><span class='function'>__init__</a></span>(<span class='parameter'><a name='base.MIMEBase.__init__@self', id ='863244134', onmouseover='highlight("863247141","863248164","863247980")', title='base.MIMEBase.__init__@self :: MIMEBase'>self</a></span>, <a name='base.MIMEBase.__init__@_maintype', id ='863244161', onmouseover='highlight(863247237)', title='base.MIMEBase.__init__@_maintype :: ?'><span class='parameter'>_maintype</a></span>, <span class='parameter'><a name='base.MIMEBase.__init__@_subtype', id ='863244193', onmouseover='highlight(863247269)', title='base.MIMEBase.__init__@_subtype :: ?'>_subtype</span></a>, **_params):
+<span class='lineno'>17</span>         <span class='doc-string'>&quot;&quot;&quot;This constructor adds a Content-Type: and a MIME-Version: header.
+<span class='lineno'>18</span> 
+<span class='lineno'>19</span>         The Content-Type: header is taken from the _maintype and _subtype
+<span class='lineno'>20</span>         arguments.  Additional parameters for this header are taken from the
+<span class='lineno'>21</span>         keyword arguments.
+<span class='lineno'>22</span>         &quot;&quot;&quot;</span>
+<span class='lineno'>23</span>         message.Message.__init__(<a href='#base.MIMEBase.__init__@self', id ='863247141', onmouseover='highlight(863244134)', title='base.MIMEBase.__init__@self :: MIMEBase'>self</a>)
+<span class='lineno'>24</span>         <span class='identifier'><a name='base.MIMEBase.__init__&ctype', id ='863247176', onmouseover='highlight(863248075)', title='base.MIMEBase.__init__&ctype :: str'>ctype</span></a> = &#39;%s/%s&#39; % (<a href='#base.MIMEBase.__init__@_maintype', id ='863247237', onmouseover='highlight(863244161)', title='base.MIMEBase.__init__@_maintype :: ?'>_maintype</a>, <a href='#base.MIMEBase.__init__@_subtype', id ='863247269', onmouseover='highlight(863244193)', title='base.MIMEBase.__init__@_subtype :: ?'>_subtype</a>)
+<span class='lineno'>25</span>         <a href='#base.MIMEBase.__init__@self', id ='863247980', onmouseover='highlight(863244134)', title='base.MIMEBase.__init__@self :: MIMEBase'>self</a>.add_header(&#39;Content-Type&#39;, <a href='#base.MIMEBase.__init__&ctype', id ='863248075', onmouseover='highlight(863247176)', title='base.MIMEBase.__init__&ctype :: str'>ctype</a>, **_params)
+<span class='lineno'>26</span>         <a href='#base.MIMEBase.__init__@self', id ='863248164', onmouseover='highlight(863244134)', title='base.MIMEBase.__init__@self :: MIMEBase'>self</a>[&#39;MIME-Version&#39;] = &#39;1.0&#39;
+</pre></td></tr></table></body></html>

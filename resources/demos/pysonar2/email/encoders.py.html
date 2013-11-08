@@ -1,0 +1,129 @@
+<html><head title="/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/email/encoders.py"><style type='text/css'>
+body { color: #666666; } 
+a {text-decoration: none; color: #5A82F7}
+table, th, td { border: 1px solid lightgrey; padding: 5px; corner: rounded; }
+.builtin {color: #B17E41;}
+.comment, .block-comment {color: #aaaaaa; font-style: italic;}
+.constant {color: #888888;}
+.decorator {color: #778899;}
+.doc-string {color: #aaaaaa;}
+.error {border-bottom: 1px solid red;}
+.field-name {color: #2e8b57;}
+.function {color: #4682b4;}
+.identifier {color: #8b7765;}
+.info {border-bottom: 1px dotted RoyalBlue;}
+.keyword {color: #0000cd;}
+.lineno {color: #aaaaaa;}
+.number {color: #483d8b;}
+.parameter {color: #777777;}
+.string {color: #999999;}
+.type-name {color: #4682b4;}
+.warning {border-bottom: 1px dotted orange;}
+</style>
+<script language="JavaScript" type="text/javascript">
+var highlighted = new Array();
+function highlight()
+{
+    // clear existing highlights
+    for (var i = 0; i < highlighted.length; i++) {
+        var elm = document.getElementById(highlighted[i]);
+        if (elm != null) {
+            elm.style.backgroundColor = 'white';
+        }
+    }
+    highlighted = new Array();
+    for (var i = 0; i < arguments.length; i++) {
+        var elm = document.getElementById(arguments[i]);
+        if (elm != null) {
+            elm.style.backgroundColor='gold';
+        }
+        highlighted.push(arguments[i]);
+    }
+} </script>
+</head>
+<body>
+<table width=100% border='1px solid gray'><tr><td valign='top'><ul>
+<li><a href='#base64', onmouseover='highlight("base64")'>base64</a></li><li><a href='#encoders.__all__', onmouseover='highlight("encoders___all__")'><span class='identifier'>__all__</span></a></li><li><a href='#encoders._qencode', onmouseover='highlight("encoders__qencode")'><span class='function'>_qencode</span></a></li><li><a href='#encoders._bencode', onmouseover='highlight("encoders__bencode")'><span class='function'>_bencode</span></a></li><li><a href='#encoders.encode_base64', onmouseover='highlight("encoders_encode_base64")'><span class='function'>encode_base64</span></a></li><li><a href='#encoders.encode_quopri', onmouseover='highlight("encoders_encode_quopri")'><span class='function'>encode_quopri</span></a></li><li><a href='#encoders.encode_7or8bit', onmouseover='highlight("encoders_encode_7or8bit")'><span class='function'>encode_7or8bit</span></a></li><li><a href='#encoders.encode_noop', onmouseover='highlight("encoders_encode_noop")'><span class='function'>encode_noop</span></a></li></ul>
+</td><td><pre><span class='lineno'>1</span> # Copyr<a name='base64', id ='227557662', onmouseover='highlight("227557662","360418117")', title='base64 :: base64'><a href='/Users/yinwang/results/html/base64.py.html#base64', id ='227557662', onmouseover='highlight(227557662)', title='base64 :: base64'>ight </a>(</a>C) 2001-2006 Python Software Foundation
+<span class='lineno'>2</span> # Author: Barry Warsaw
+<span class='lineno'>3</span> # Contact: email-sig@python.org
+<span class='lineno'>4</span> 
+<span class='lineno'>5</span> <span class='doc-string'>&quot;&quot;&quot;Encodings and related functions.&quot;&quot;&quot;</span>
+<span class='lineno'>6</span> 
+<span class='lineno'>7</span> <a name='encoders.__all__', id ='360423011', title='encoders.__all__ :: [str]'>__all__</a> = [
+<span class='lineno'>8</span>     &#39;encode_7or8bit&#39;,
+<span class='lineno'>9</span>     &#39;encode_base64&#39;,
+<span class='lineno'>10</span>     &#39;encode_noop&#39;,
+<span class='lineno'>11</span>     &#39;encode_quopri&#39;,
+<span class='lineno'>12</span>     ]
+<span class='lineno'>13</span> 
+<span class='lineno'>14</span> import base64
+<span class='lineno'>15</span> 
+<span class='lineno'>16</span> from quopri import encodestring as _encodestring
+<span class='lineno'>17</span> 
+<span class='lineno'>18</span> 
+<span class='lineno'>19</span> 
+<span class='lineno'>20</span> def <a name='encoders._qencode', id ='360421157', onmouseover='highlight(1711786588)', title='encoders._qencode :: ? -> ?'><span class='function'>_qencode</span></a>(<span class='parameter'><a name='encoders._qencode@s', id ='360421127', onmouseover='highlight(360421036)', title='encoders._qencode@s :: ?'>s</a></span>):
+<span class='lineno'>21</span>     <a name='encoders._qencode&enc', id ='360421098', onmouseover='highlight(360420101)', title='encoders._qencode&enc :: ?'><span class='identifier'>enc</span></a> = _encodestring(<a href='#encoders._qencode@s', id ='360421036', onmouseover='highlight(360421127)', title='encoders._qencode@s :: ?'>s</a>, quotetabs=True)
+<span class='lineno'>22</span>     # Must encode spaces, which quopri.encodestring() doesn&#39;t do
+<span class='lineno'>23</span>     return <a href='#encoders._qencode&enc', id ='360420101', onmouseover='highlight(360421098)', title='encoders._qencode&enc :: ?'>enc</a>.replace(&#39; &#39;, &#39;=20&#39;)
+<span class='lineno'>24</span> 
+<span class='lineno'>25</span> 
+<span class='lineno'>26</span> def <a name='encoders._bencode', id ='360420008', onmouseover='highlight(360415233)', title='encoders._bencode :: ? -> ?'><span class='function'>_bencode</a></span>(<span class='parameter'><a name='encoders._bencode@s', id ='360419978', onmouseover='highlight("360418308","360418055","360418207","360418269")', title='encoders._bencode@s :: ?'>s</a></span>):
+<span class='lineno'>27</span>     # We can&#39;t quite use base64.encodestring() since it tacks on a &quot;courtesy
+<span class='lineno'>28</span>     # newline&quot;.  Blech!
+<span class='lineno'>29</span>     if not <a href='#encoders._bencode@s', id ='360418308', onmouseover='highlight(360419978)', title='encoders._bencode@s :: ?'>s</a>:
+<span class='lineno'>30</span>         return <a href='#encoders._bencode@s', id ='360418269', onmouseover='highlight(360419978)', title='encoders._bencode@s :: ?'>s</a>
+<span class='lineno'>31</span>     <span class='identifier'><a name='encoders._bencode&hasnewline', id ='360418242', onmouseover='highlight(360417369)', title='encoders._bencode&hasnewline :: int'>hasnewline</a></span> = (<a href='#encoders._bencode@s', id ='360418207', onmouseover='highlight(360419978)', title='encoders._bencode@s :: ?'>s</a>[<span class='number'>-1</span>] == &#39;\n&#39;)
+<span class='lineno'>32</span>     <a name='encoders._bencode&value', id ='360418146', onmouseover='highlight("360417130","360417215","360417312")', title='encoders._bencode&value :: ?'><span class='identifier'>value</span></a> = <a href='/Users/yinwang/results/html/base64.py.html#base64', id ='360418117', onmouseover='highlight(227557662)', title='base64 :: base64'>base64</a>.<a href='/Users/yinwang/results/html/base64.py.html#base64.encodestring', id ='360418089', onmouseover='highlight(1232110983)', title='base64.encodestring :: str -> ?'>encodestring</a>(<a href='#encoders._bencode@s', id ='360418055', onmouseover='highlight(360419978)', title='encoders._bencode@s :: ?'>s</a>)
+<span class='lineno'>33</span>     if not <a href='#encoders._bencode&hasnewline', id ='360417369', onmouseover='highlight(360418242)', title='encoders._bencode&hasnewline :: int'>hasnewline</a> and <a href='#encoders._bencode&value', id ='360417312', onmouseover='highlight(360418146)', title='encoders._bencode&value :: ?'>value</a>[<span class='number'>-1</span>] == &#39;\n&#39;:
+<span class='lineno'>34</span>         return <a href='#encoders._bencode&value', id ='360417215', onmouseover='highlight(360418146)', title='encoders._bencode&value :: ?'>value</a>[:<span class='number'>-1</span>]
+<span class='lineno'>35</span>     return <a href='#encoders._bencode&value', id ='360417130', onmouseover='highlight(360418146)', title='encoders._bencode&value :: ?'>value</a>
+<span class='lineno'>36</span> 
+<span class='lineno'>37</span> 
+<span class='lineno'>38</span> 
+<span class='lineno'>39</span> def <span class='function'><a name='encoders.encode_base64', id ='360417095', title='encoders.encode_base64 :: ? -> None'>encode_base64</span></a>(<span class='parameter'><a name='encoders.encode_base64@msg', id ='360416409', onmouseover='highlight("360415172","360415328","1711784538")', title='encoders.encode_base64@msg :: ?'>msg</a></span>):
+<span class='lineno'>40</span>     <span class='doc-string'>&quot;&quot;&quot;Encode the message&#39;s payload in Base64.
+<span class='lineno'>41</span> 
+<span class='lineno'>42</span>     Also, add an appropriate Content-Transfer-Encoding header.
+<span class='lineno'>43</span>     &quot;&quot;&quot;</span>
+<span class='lineno'>44</span>     <span class='identifier'><a name='encoders.encode_base64&orig', id ='360415356', onmouseover='highlight(360415203)', title='encoders.encode_base64&orig :: ?'>orig</a></span> = <a href='#encoders.encode_base64@msg', id ='360415328', onmouseover='highlight(360416409)', title='encoders.encode_base64@msg :: ?'>msg</a>.get_payload()
+<span class='lineno'>45</span>     <span class='identifier'><a name='encoders.encode_base64&encdata', id ='360415264', onmouseover='highlight(1711784504)', title='encoders.encode_base64&encdata :: ?'>encdata</span></a> = <a href='#encoders._bencode', id ='360415233', onmouseover='highlight(360420008)', title='encoders._bencode :: ? -> ?'>_bencode</a>(<a href='#encoders.encode_base64&orig', id ='360415203', onmouseover='highlight(360415356)', title='encoders.encode_base64&orig :: ?'>orig</a>)
+<span class='lineno'>46</span>     <a href='#encoders.encode_base64@msg', id ='360415172', onmouseover='highlight(360416409)', title='encoders.encode_base64@msg :: ?'>msg</a>.set_payload(<a href='#encoders.encode_base64&encdata', id ='1711784504', onmouseover='highlight(360415264)', title='encoders.encode_base64&encdata :: ?'>encdata</a>)
+<span class='lineno'>47</span>     <a href='#encoders.encode_base64@msg', id ='1711784538', onmouseover='highlight(360416409)', title='encoders.encode_base64@msg :: ?'>msg</a>[&#39;Content-Transfer-Encoding&#39;] = &#39;base64&#39;
+<span class='lineno'>48</span> 
+<span class='lineno'>49</span> 
+<span class='lineno'>50</span> 
+<span class='lineno'>51</span> def <a name='encoders.encode_quopri', id ='1711784695', title='encoders.encode_quopri :: ? -> None'><span class='function'>encode_quopri</span></a>(<span class='parameter'><a name='encoders.encode_quopri@msg', id ='1711784751', onmouseover='highlight("1711786493","1711786649","1711787392")', title='encoders.encode_quopri@msg :: ?'>msg</a></span>):
+<span class='lineno'>52</span>     <span class='doc-string'>&quot;&quot;&quot;Encode the message&#39;s payload in quoted-printable.
+<span class='lineno'>53</span> 
+<span class='lineno'>54</span>     Also, add an appropriate Content-Transfer-Encoding header.
+<span class='lineno'>55</span>     &quot;&quot;&quot;</span>
+<span class='lineno'>56</span>     <span class='identifier'><a name='encoders.encode_quopri&orig', id ='1711786465', onmouseover='highlight(1711786618)', title='encoders.encode_quopri&orig :: ?'>orig</a></span> = <a href='#encoders.encode_quopri@msg', id ='1711786493', onmouseover='highlight(1711784751)', title='encoders.encode_quopri@msg :: ?'>msg</a>.get_payload()
+<span class='lineno'>57</span>     <span class='identifier'><a name='encoders.encode_quopri&encdata', id ='1711786557', onmouseover='highlight(1711787358)', title='encoders.encode_quopri&encdata :: ?'>encdata</a></span> = <a href='#encoders._qencode', id ='1711786588', onmouseover='highlight(360421157)', title='encoders._qencode :: ? -> ?'>_qencode</a>(<a href='#encoders.encode_quopri&orig', id ='1711786618', onmouseover='highlight(1711786465)', title='encoders.encode_quopri&orig :: ?'>orig</a>)
+<span class='lineno'>58</span>     <a href='#encoders.encode_quopri@msg', id ='1711786649', onmouseover='highlight(1711784751)', title='encoders.encode_quopri@msg :: ?'>msg</a>.set_payload(<a href='#encoders.encode_quopri&encdata', id ='1711787358', onmouseover='highlight(1711786557)', title='encoders.encode_quopri&encdata :: ?'>encdata</a>)
+<span class='lineno'>59</span>     <a href='#encoders.encode_quopri@msg', id ='1711787392', onmouseover='highlight(1711784751)', title='encoders.encode_quopri@msg :: ?'>msg</a>[&#39;Content-Transfer-Encoding&#39;] = &#39;quoted-printable&#39;
+<span class='lineno'>60</span> 
+<span class='lineno'>61</span> 
+<span class='lineno'>62</span> 
+<span class='lineno'>63</span> def <span class='function'><a name='encoders.encode_7or8bit', id ='1711787580', title='encoders.encode_7or8bit :: ? -> None'>encode_7or8bit</a></span>(<span class='parameter'><a name='encoders.encode_7or8bit@msg', id ='1711787637', onmouseover='highlight("1711792351","1711788541","1711793188","1711789562")', title='encoders.encode_7or8bit@msg :: ?'>msg</span></a>):
+<span class='lineno'>64</span>     <span class='doc-string'>&quot;&quot;&quot;Set the Content-Transfer-Encoding header to 7bit or 8bit.&quot;&quot;&quot;</span>
+<span class='lineno'>65</span>     <span class='identifier'><a name='encoders.encode_7or8bit&orig', id ='1711788534', onmouseover='highlight("1711792192","1711789280")', title='encoders.encode_7or8bit&orig :: ?'>orig</span></a> = <a href='#encoders.encode_7or8bit@msg', id ='1711788541', onmouseover='highlight(1711787637)', title='encoders.encode_7or8bit@msg :: ?'>msg</a>.get_payload()
+<span class='lineno'>66</span>     if <a href='#encoders.encode_7or8bit&orig', id ='1711789280', onmouseover='highlight(1711788534)', title='encoders.encode_7or8bit&orig :: ?'>orig</a> is <span class='builtin'><a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='1711789309', onmouseover='highlight(2016665419)', title='__builtin__.None :: ?'>None</span></a>:
+<span class='lineno'>67</span>         # There&#39;s no payload.  For backwards compatibility we use 7bit
+<span class='lineno'>68</span>         <a href='#encoders.encode_7or8bit@msg', id ='1711789562', onmouseover='highlight(1711787637)', title='encoders.encode_7or8bit@msg :: ?'>msg</a>[&#39;Content-Transfer-Encoding&#39;] = &#39;7bit&#39;
+<span class='lineno'>69</span>         return
+<span class='lineno'>70</span>     # We play a trick to make this go fast.  If encoding to ASCII succeeds, we
+<span class='lineno'>71</span>     # know the data must be 7bit, otherwise treat it as 8bit.
+<span class='lineno'>72</span>     try:
+<span class='lineno'>73</span>         <a href='#encoders.encode_7or8bit&orig', id ='1711792192', onmouseover='highlight(1711788534)', title='encoders.encode_7or8bit&orig :: ?'>orig</a>.encode(&#39;ascii&#39;)
+<span class='lineno'>74</span>     except <a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='1711792287', onmouseover='highlight(2016665419)', title='__builtin__.UnicodeError :: <UnicodeError>'>UnicodeError</a>:
+<span class='lineno'>75</span>         <a href='#encoders.encode_7or8bit@msg', id ='1711792351', onmouseover='highlight(1711787637)', title='encoders.encode_7or8bit@msg :: ?'>msg</a>[&#39;Content-Transfer-Encoding&#39;] = &#39;8bit&#39;
+<span class='lineno'>76</span>     else:
+<span class='lineno'>77</span>         <a href='#encoders.encode_7or8bit@msg', id ='1711793188', onmouseover='highlight(1711787637)', title='encoders.encode_7or8bit@msg :: ?'>msg</a>[&#39;Content-Transfer-Encoding&#39;] = &#39;7bit&#39;
+<span class='lineno'>78</span> 
+<span class='lineno'>79</span> 
+<span class='lineno'>80</span> 
+<span class='lineno'>81</span> def <a name='encoders.encode_noop', id ='1711793343', title='encoders.encode_noop :: ? -> None'><span class='function'>encode_noop</a></span>(<span class='parameter'><a name='encoders.encode_noop@msg', id ='1711793376', title='encoders.encode_noop@msg :: ?'>msg</span></a>):
+<span class='lineno'>82</span>     <span class='doc-string'>&quot;&quot;&quot;Do nothing.&quot;&quot;&quot;</span>
+</pre></td></tr></table></body></html>

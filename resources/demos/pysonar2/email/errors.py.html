@@ -1,0 +1,130 @@
+<html><head title="/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/email/errors.py"><style type='text/css'>
+body { color: #666666; } 
+a {text-decoration: none; color: #5A82F7}
+table, th, td { border: 1px solid lightgrey; padding: 5px; corner: rounded; }
+.builtin {color: #B17E41;}
+.comment, .block-comment {color: #aaaaaa; font-style: italic;}
+.constant {color: #888888;}
+.decorator {color: #778899;}
+.doc-string {color: #aaaaaa;}
+.error {border-bottom: 1px solid red;}
+.field-name {color: #2e8b57;}
+.function {color: #4682b4;}
+.identifier {color: #8b7765;}
+.info {border-bottom: 1px dotted RoyalBlue;}
+.keyword {color: #0000cd;}
+.lineno {color: #aaaaaa;}
+.number {color: #483d8b;}
+.parameter {color: #777777;}
+.string {color: #999999;}
+.type-name {color: #4682b4;}
+.warning {border-bottom: 1px dotted orange;}
+</style>
+<script language="JavaScript" type="text/javascript">
+var highlighted = new Array();
+function highlight()
+{
+    // clear existing highlights
+    for (var i = 0; i < highlighted.length; i++) {
+        var elm = document.getElementById(highlighted[i]);
+        if (elm != null) {
+            elm.style.backgroundColor = 'white';
+        }
+    }
+    highlighted = new Array();
+    for (var i = 0; i < arguments.length; i++) {
+        var elm = document.getElementById(arguments[i]);
+        if (elm != null) {
+            elm.style.backgroundColor='gold';
+        }
+        highlighted.push(arguments[i]);
+    }
+} </script>
+</head>
+<body>
+<table width=100% border='1px solid gray'><tr><td valign='top'><ul>
+<li><a href='#errors.MessageError', onmouseover='highlight("errors_MessageError")'><span class='type-name'>MessageError</span></a><ul>
+</ul>
+</li><li><a href='#errors.MessageParseError', onmouseover='highlight("errors_MessageParseError")'><span class='type-name'>MessageParseError</span></a><ul>
+</ul>
+</li><li><a href='#errors.HeaderParseError', onmouseover='highlight("errors_HeaderParseError")'><span class='type-name'>HeaderParseError</span></a><ul>
+</ul>
+</li><li><a href='#errors.BoundaryError', onmouseover='highlight("errors_BoundaryError")'><span class='type-name'>BoundaryError</span></a><ul>
+</ul>
+</li><li><a href='#errors.MultipartConversionError', onmouseover='highlight("errors_MultipartConversionError")'><span class='type-name'>MultipartConversionError</span></a><ul>
+</ul>
+</li><li><a href='#errors.CharsetError', onmouseover='highlight("errors_CharsetError")'><span class='type-name'>CharsetError</span></a><ul>
+</ul>
+</li><li><a href='#errors.MessageDefect', onmouseover='highlight("errors_MessageDefect")'><span class='type-name'>MessageDefect</span></a><ul>
+<li><a href='#errors.MessageDefect.__init__', onmouseover='highlight("errors_MessageDefect___init__")'><span class='function'>__init__</span></a></li></ul>
+</li><li><a href='#errors.NoBoundaryInMultipartDefect', onmouseover='highlight("errors_NoBoundaryInMultipartDefect")'><span class='type-name'>NoBoundaryInMultipartDefect</span></a><ul>
+</ul>
+</li><li><a href='#errors.StartBoundaryNotFoundDefect', onmouseover='highlight("errors_StartBoundaryNotFoundDefect")'><span class='type-name'>StartBoundaryNotFoundDefect</span></a><ul>
+</ul>
+</li><li><a href='#errors.FirstHeaderLineIsContinuationDefect', onmouseover='highlight("errors_FirstHeaderLineIsContinuationDefect")'><span class='type-name'>FirstHeaderLineIsContinuationDefect</span></a><ul>
+</ul>
+</li><li><a href='#errors.MisplacedEnvelopeHeaderDefect', onmouseover='highlight("errors_MisplacedEnvelopeHeaderDefect")'><span class='type-name'>MisplacedEnvelopeHeaderDefect</span></a><ul>
+</ul>
+</li><li><a href='#errors.MalformedHeaderDefect', onmouseover='highlight("errors_MalformedHeaderDefect")'><span class='type-name'>MalformedHeaderDefect</span></a><ul>
+</ul>
+</li><li><a href='#errors.MultipartInvariantViolationDefect', onmouseover='highlight("errors_MultipartInvariantViolationDefect")'><span class='type-name'>MultipartInvariantViolationDefect</span></a><ul>
+</ul>
+</li></ul>
+</td><td><pre><span class='lineno'>1</span> # Copyright (C) 2001-2006 Python Software Foundation
+<span class='lineno'>2</span> # Author: Barry Warsaw
+<span class='lineno'>3</span> # Contact: email-sig@python.org
+<span class='lineno'>4</span> 
+<span class='lineno'>5</span> <span class='doc-string'>&quot;&quot;&quot;email package exception classes.&quot;&quot;&quot;</span>
+<span class='lineno'>6</span> 
+<span class='lineno'>7</span> 
+<span class='lineno'>8</span> 
+<span class='lineno'>9</span> class <a name='errors.MessageError', id ='800739057', onmouseover='highlight("800735281","800738070","800734322")', title='errors.MessageError :: <MessageError>'><span class='type-name'>MessageError</span></a>(<a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='800739002', onmouseover='highlight(2016665419)', title='__builtin__.Exception :: <Exception>'>Exception</a>):
+<span class='lineno'>10</span>     <span class='doc-string'>&quot;&quot;&quot;Base class for errors in the email package.&quot;&quot;&quot;</span>
+<span class='lineno'>11</span> 
+<span class='lineno'>12</span> 
+<span class='lineno'>13</span> class <a name='errors.MessageParseError', id ='800738130', onmouseover='highlight("800737141","800736241")', title='errors.MessageParseError :: <MessageParseError>'><span class='type-name'>MessageParseError</span></a>(<a href='#errors.MessageError', id ='800738070', onmouseover='highlight(800739057)', title='errors.MessageError :: <MessageError>'>MessageError</a>):
+<span class='lineno'>14</span>     <span class='doc-string'>&quot;&quot;&quot;Base class for message parsing errors.&quot;&quot;&quot;</span>
+<span class='lineno'>15</span> 
+<span class='lineno'>16</span> 
+<span class='lineno'>17</span> class <a name='errors.HeaderParseError', id ='800737200', title='errors.HeaderParseError :: <HeaderParseError>'><span class='type-name'>HeaderParseError</span></a>(<a href='#errors.MessageParseError', id ='800737141', onmouseover='highlight(800738130)', title='errors.MessageParseError :: <MessageParseError>'>MessageParseError</a>):
+<span class='lineno'>18</span>     <span class='doc-string'>&quot;&quot;&quot;Error while parsing headers.&quot;&quot;&quot;</span>
+<span class='lineno'>19</span> 
+<span class='lineno'>20</span> 
+<span class='lineno'>21</span> class <a name='errors.BoundaryError', id ='800736297', title='errors.BoundaryError :: <BoundaryError>'><span class='type-name'>BoundaryError</a></span>(<a href='#errors.MessageParseError', id ='800736241', onmouseover='highlight(800738130)', title='errors.MessageParseError :: <MessageParseError>'>MessageParseError</a>):
+<span class='lineno'>22</span>     <span class='doc-string'>&quot;&quot;&quot;Couldn&#39;t find terminating boundary.&quot;&quot;&quot;</span>
+<span class='lineno'>23</span> 
+<span class='lineno'>24</span> 
+<span class='lineno'>25</span> class <span class='type-name'><a name='errors.MultipartConversionError', id ='800735369', title='errors.MultipartConversionError :: <MultipartConversionError>'>MultipartConversionError</span></a>(<a href='#errors.MessageError', id ='800735281', onmouseover='highlight(800739057)', title='errors.MessageError :: <MessageError>'>MessageError</a>, <a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='800735246', onmouseover='highlight(2016665419)', title='__builtin__.TypeError :: <TypeError>'>TypeError</a>):
+<span class='lineno'>26</span>     <span class='doc-string'>&quot;&quot;&quot;Conversion to a multipart is prohibited.&quot;&quot;&quot;</span>
+<span class='lineno'>27</span> 
+<span class='lineno'>28</span> 
+<span class='lineno'>29</span> class <a name='errors.CharsetError', id ='800734377', title='errors.CharsetError :: <CharsetError>'><span class='type-name'>CharsetError</span></a>(<a href='#errors.MessageError', id ='800734322', onmouseover='highlight(800739057)', title='errors.MessageError :: <MessageError>'>MessageError</a>):
+<span class='lineno'>30</span>     <span class='doc-string'>&quot;&quot;&quot;An illegal charset was given.&quot;&quot;&quot;</span>
+<span class='lineno'>31</span> 
+<span class='lineno'>32</span> 
+<span class='lineno'>33</span> 
+<span class='lineno'>34</span> # These are parsing defects which the parser was able to work around.
+<span class='lineno'>35</span> class <a name='errors.MessageDefect', id ='800733263', onmouseover='highlight("946892910","946888135","946891850","946890177","800731492","946889151")', title='errors.MessageDefect :: <MessageDefect>'><span class='type-name'>MessageDefect</span></a>:
+<span class='lineno'>36</span>     <span class='doc-string'>&quot;&quot;&quot;Base class for a message defect.&quot;&quot;&quot;</span>
+<span class='lineno'>37</span> 
+<span class='lineno'>38</span>     def <span class='function'><a name='errors.MessageDefect.__init__', id ='800732398', title='errors.MessageDefect.__init__ :: (MessageDefect, ?) -> None'>__init__</span></a>(<span class='parameter'><a name='errors.MessageDefect.__init__@self', id ='800732368', onmouseover='highlight(800732300)', title='errors.MessageDefect.__init__@self :: MessageDefect'>self</a></span>, <a name='errors.MessageDefect.__init__@line', id ='800732362', onmouseover='highlight(800732267)', title='errors.MessageDefect.__init__@line :: ?'><span class='parameter'>line</a></span>=<a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='800732336', onmouseover='highlight(2016665419)', title='__builtin__.None :: ?'>None</a>):
+<span class='lineno'>39</span>         <a href='#errors.MessageDefect.__init__@self', id ='800732300', onmouseover='highlight(800732368)', title='errors.MessageDefect.__init__@self :: MessageDefect'>self</a>.<a name='errors.MessageDefect.line', id ='800732274', title='errors.MessageDefect.line :: ?'>line</a> = <a href='#errors.MessageDefect.__init__@line', id ='800732267', onmouseover='highlight(800732362)', title='errors.MessageDefect.__init__@line :: ?'>line</a>
+<span class='lineno'>40</span> 
+<span class='lineno'>41</span> class <span class='type-name'><a name='errors.NoBoundaryInMultipartDefect', id ='800732213', title='errors.NoBoundaryInMultipartDefect :: <NoBoundaryInMultipartDefect>'>NoBoundaryInMultipartDefect</span></a>(<a href='#errors.MessageDefect', id ='800731492', onmouseover='highlight(800733263)', title='errors.MessageDefect :: <MessageDefect>'>MessageDefect</a>):
+<span class='lineno'>42</span>     <span class='doc-string'>&quot;&quot;&quot;A message claimed to be a multipart but had no boundary parameter.&quot;&quot;&quot;</span>
+<span class='lineno'>43</span> 
+<span class='lineno'>44</span> class <span class='type-name'><a name='errors.StartBoundaryNotFoundDefect', id ='946888044', title='errors.StartBoundaryNotFoundDefect :: <StartBoundaryNotFoundDefect>'>StartBoundaryNotFoundDefect</a></span>(<a href='#errors.MessageDefect', id ='946888135', onmouseover='highlight(800733263)', title='errors.MessageDefect :: <MessageDefect>'>MessageDefect</a>):
+<span class='lineno'>45</span>     <span class='doc-string'>&quot;&quot;&quot;The claimed start boundary was never found.&quot;&quot;&quot;</span>
+<span class='lineno'>46</span> 
+<span class='lineno'>47</span> class <a name='errors.FirstHeaderLineIsContinuationDefect', id ='946889031', title='errors.FirstHeaderLineIsContinuationDefect :: <FirstHeaderLineIsContinuationDefect>'><span class='type-name'>FirstHeaderLineIsContinuationDefect</span></a>(<a href='#errors.MessageDefect', id ='946889151', onmouseover='highlight(800733263)', title='errors.MessageDefect :: <MessageDefect>'>MessageDefect</a>):
+<span class='lineno'>48</span>     <span class='doc-string'>&quot;&quot;&quot;A message had a continuation line as its first header line.&quot;&quot;&quot;</span>
+<span class='lineno'>49</span> 
+<span class='lineno'>50</span> class <span class='type-name'><a name='errors.MisplacedEnvelopeHeaderDefect', id ='946890084', title='errors.MisplacedEnvelopeHeaderDefect :: <MisplacedEnvelopeHeaderDefect>'>MisplacedEnvelopeHeaderDefect</span></a>(<a href='#errors.MessageDefect', id ='946890177', onmouseover='highlight(800733263)', title='errors.MessageDefect :: <MessageDefect>'>MessageDefect</a>):
+<span class='lineno'>51</span>     <span class='doc-string'>&quot;&quot;&quot;A &#39;Unix-from&#39; header was found in the middle of a header block.&quot;&quot;&quot;</span>
+<span class='lineno'>52</span> 
+<span class='lineno'>53</span> class <a name='errors.MalformedHeaderDefect', id ='946891135', title='errors.MalformedHeaderDefect :: <MalformedHeaderDefect>'><span class='type-name'>MalformedHeaderDefect</span></a>(<a href='#errors.MessageDefect', id ='946891850', onmouseover='highlight(800733263)', title='errors.MessageDefect :: <MessageDefect>'>MessageDefect</a>):
+<span class='lineno'>54</span>     <span class='doc-string'>&quot;&quot;&quot;Found a header that was missing a colon, or was otherwise malformed.&quot;&quot;&quot;</span>
+<span class='lineno'>55</span> 
+<span class='lineno'>56</span> class <span class='type-name'><a name='errors.MultipartInvariantViolationDefect', id ='946892813', title='errors.MultipartInvariantViolationDefect :: <MultipartInvariantViolationDefect>'>MultipartInvariantViolationDefect</a></span>(<a href='#errors.MessageDefect', id ='946892910', onmouseover='highlight(800733263)', title='errors.MessageDefect :: <MessageDefect>'>MessageDefect</a>):
+<span class='lineno'>57</span>     <span class='doc-string'>&quot;&quot;&quot;A message claimed to be a multipart but no subparts were found.&quot;&quot;&quot;</span>
+</pre></td></tr></table></body></html>

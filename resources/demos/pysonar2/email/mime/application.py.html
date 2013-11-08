@@ -1,0 +1,85 @@
+<html><head title="/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/email/mime/application.py"><style type='text/css'>
+body { color: #666666; } 
+a {text-decoration: none; color: #5A82F7}
+table, th, td { border: 1px solid lightgrey; padding: 5px; corner: rounded; }
+.builtin {color: #B17E41;}
+.comment, .block-comment {color: #aaaaaa; font-style: italic;}
+.constant {color: #888888;}
+.decorator {color: #778899;}
+.doc-string {color: #aaaaaa;}
+.error {border-bottom: 1px solid red;}
+.field-name {color: #2e8b57;}
+.function {color: #4682b4;}
+.identifier {color: #8b7765;}
+.info {border-bottom: 1px dotted RoyalBlue;}
+.keyword {color: #0000cd;}
+.lineno {color: #aaaaaa;}
+.number {color: #483d8b;}
+.parameter {color: #777777;}
+.string {color: #999999;}
+.type-name {color: #4682b4;}
+.warning {border-bottom: 1px dotted orange;}
+</style>
+<script language="JavaScript" type="text/javascript">
+var highlighted = new Array();
+function highlight()
+{
+    // clear existing highlights
+    for (var i = 0; i < highlighted.length; i++) {
+        var elm = document.getElementById(highlighted[i]);
+        if (elm != null) {
+            elm.style.backgroundColor = 'white';
+        }
+    }
+    highlighted = new Array();
+    for (var i = 0; i < arguments.length; i++) {
+        var elm = document.getElementById(arguments[i]);
+        if (elm != null) {
+            elm.style.backgroundColor='gold';
+        }
+        highlighted.push(arguments[i]);
+    }
+} </script>
+</head>
+<body>
+<table width=100% border='1px solid gray'><tr><td valign='top'><ul>
+<li><a href='#application.__all__', onmouseover='highlight("application___all__")'><span class='identifier'>__all__</span></a></li><li><a href='#application.MIMEApplication', onmouseover='highlight("application_MIMEApplication")'><span class='type-name'>MIMEApplication</span></a><ul>
+<li><a href='#application.MIMEApplication.__init__', onmouseover='highlight("application_MIMEApplication___init__")'><span class='function'>__init__</span></a></li></ul>
+</li></ul>
+</td><td><pre><span class='lineno'>1</span> </span></span><span class='parameter'><span class='parameter'># Copyright (C) 2001-2006 Python Software Foundation
+<span class='lineno'>2</span> # Author: Keith Dart
+<span class='lineno'>3</span> # Contact: email-sig@python.org
+<span class='lineno'>4</span> 
+<span class='lineno'>5</span> <span class='doc-string'>&quot;&quot;&quot;Class representing application/* type MIME documents.&quot;&quot;&quot;</span>
+<span class='lineno'>6</span> 
+<span class='lineno'>7</span> <a name='application.__all__', id ='1623804552', title='application.__all__ :: [str]'>__all__</a> = [&quot;MIMEApplication&quot;]
+<span class='lineno'>8</span> 
+<span class='lineno'>9</span> from email import encoders
+<span class='lineno'>10</span> from email.mime.nonmultipart import MIMENonMultipart
+<span class='lineno'>11</span> 
+<span class='lineno'>12</span> 
+<span class='lineno'>13</span> class <span class='type-name'><a name='application.MIMEApplication', id ='1623803530', title='application.MIMEApplication :: <MIMEApplication>'>MIMEApplication</span></a>(MIMENonMultipart):
+<span class='lineno'>14</span>     <span class='doc-string'>&quot;&quot;&quot;Class for generating application/* MIME documents.&quot;&quot;&quot;</span>
+<span class='lineno'>15</span> 
+<span class='lineno'>16</span>     def <a name='application.MIMEApplication.__init__', id ='1623802543', title='application.MIMEApplication.__init__ :: (MIMEApplication, ?, str, ?) -> None'><span class='function'>__init__</a></span>(<span class='parameter'><a name='application.MIMEApplication.__init__@self', id ='1623801862', onmouseover='highlight("1201662551","1201662405","1201661599")', title='application.MIMEApplication.__init__@self :: MIMEApplication'>self</a></span>, <a name='application.MIMEApplication.__init__@_data', id ='1623801856', onmouseover='highlight(1201662464)', title='application.MIMEApplication.__init__@_data :: ?'><span class='parameter'>_data</a></span>, <span class='parameter'><a name='application.MIMEApplication.__init__@_subtype', id ='1623801828', onmouseover='highlight("1201661683","1201660601")', title='application.MIMEApplication.__init__@_subtype :: str'>_subtype</span></a>=&#39;octet-stream&#39;,
+<span class='lineno'>17</span>                  <a name='application.MIMEApplication.__init__@_encoder', id ='1623801702', onmouseover='highlight(1201662521)', title='application.MIMEApplication.__init__@_encoder :: ?'><span class='parameter'>_encoder</span></a>=encoders.encode_base64, **_params):
+<span class='lineno'>18</span>         <span class='doc-string'>&quot;&quot;&quot;Create an application/* type MIME document.
+<span class='lineno'>19</span> 
+<span class='lineno'>20</span>         _data is a string containing the raw application data.
+<span class='lineno'>21</span> 
+<span class='lineno'>22</span>         _subtype is the MIME content type subtype, defaulting to
+<span class='lineno'>23</span>         &#39;octet-stream&#39;.
+<span class='lineno'>24</span> 
+<span class='lineno'>25</span>         _encoder is a function which will perform the actual encoding for
+<span class='lineno'>26</span>         transport of the application data, defaulting to base64 encoding.
+<span class='lineno'>27</span> 
+<span class='lineno'>28</span>         Any additional keyword arguments are passed to the base class
+<span class='lineno'>29</span>         constructor, which turns them into parameters on the Content-Type
+<span class='lineno'>30</span>         header.
+<span class='lineno'>31</span>         &quot;&quot;&quot;</span>
+<span class='lineno'>32</span>         if <a href='#application.MIMEApplication.__init__@_subtype', id ='1201660601', onmouseover='highlight(1623801828)', title='application.MIMEApplication.__init__@_subtype :: str'>_subtype</a> is <a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='1201660634', onmouseover='highlight(2016665419)', title='__builtin__.None :: ?'><span class='builtin'>None</a></span>:
+<span class='lineno'>33</span>             raise <a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='1201660700', onmouseover='highlight(2016665419)', title='__builtin__.TypeError :: <TypeError>'>TypeError</a>(&#39;Invalid application MIME subtype&#39;)
+<span class='lineno'>34</span>         MIMENonMultipart.__init__(<a href='#application.MIMEApplication.__init__@self', id ='1201661599', onmouseover='highlight(1623801862)', title='application.MIMEApplication.__init__@self :: MIMEApplication'>self</a>, &#39;application&#39;, <a href='#application.MIMEApplication.__init__@_subtype', id ='1201661683', onmouseover='highlight(1623801828)', title='application.MIMEApplication.__init__@_subtype :: str'>_subtype</a>, **_params)
+<span class='lineno'>35</span>         <a href='#application.MIMEApplication.__init__@self', id ='1201662405', onmouseover='highlight(1623801862)', title='application.MIMEApplication.__init__@self :: MIMEApplication'>self</a>.set_payload(<a href='#application.MIMEApplication.__init__@_data', id ='1201662464', onmouseover='highlight(1623801856)', title='application.MIMEApplication.__init__@_data :: ?'>_data</a>)
+<span class='lineno'>36</span>         <a href='#application.MIMEApplication.__init__@_encoder', id ='1201662521', onmouseover='highlight(1623801702)', title='application.MIMEApplication.__init__@_encoder :: ?'>_encoder</a>(<a href='#application.MIMEApplication.__init__@self', id ='1201662551', onmouseover='highlight(1623801862)', title='application.MIMEApplication.__init__@self :: MIMEApplication'>self</a>)
+</pre></td></tr></table></body></html>

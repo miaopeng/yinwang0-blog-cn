@@ -1,0 +1,60 @@
+<html><head title="/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sre.py"><style type='text/css'>
+body { color: #666666; } 
+a {text-decoration: none; color: #5A82F7}
+table, th, td { border: 1px solid lightgrey; padding: 5px; corner: rounded; }
+.builtin {color: #B17E41;}
+.comment, .block-comment {color: #aaaaaa; font-style: italic;}
+.constant {color: #888888;}
+.decorator {color: #778899;}
+.doc-string {color: #aaaaaa;}
+.error {border-bottom: 1px solid red;}
+.field-name {color: #2e8b57;}
+.function {color: #4682b4;}
+.identifier {color: #8b7765;}
+.info {border-bottom: 1px dotted RoyalBlue;}
+.keyword {color: #0000cd;}
+.lineno {color: #aaaaaa;}
+.number {color: #483d8b;}
+.parameter {color: #777777;}
+.string {color: #999999;}
+.type-name {color: #4682b4;}
+.warning {border-bottom: 1px dotted orange;}
+</style>
+<script language="JavaScript" type="text/javascript">
+var highlighted = new Array();
+function highlight()
+{
+    // clear existing highlights
+    for (var i = 0; i < highlighted.length; i++) {
+        var elm = document.getElementById(highlighted[i]);
+        if (elm != null) {
+            elm.style.backgroundColor = 'white';
+        }
+    }
+    highlighted = new Array();
+    for (var i = 0; i < arguments.length; i++) {
+        var elm = document.getElementById(arguments[i]);
+        if (elm != null) {
+            elm.style.backgroundColor='gold';
+        }
+        highlighted.push(arguments[i]);
+    }
+} </script>
+</head>
+<body>
+<table width=100% border='1px solid gray'><tr><td valign='top'><ul>
+<li><a href='#warnings', onmouseover='highlight("warnings")'>warnings</a></li></ul>
+</td><td><pre><span class='lineno'>1</span> <span class='doc-string'>&quot;&quot;&quot;This<a name='warnings', id ='1183240718', onmouseover='highlight("1071999368","1183240718")', title='warnings :: warnings'><a href='/Users/yinwang/results/html/warnings.py.html#warnings', id ='1183240718', onmouseover='highlight(1183240718)', title='warnings :: warnings'> file i</a>s</a> only retained for backwards compatibility.
+<span class='lineno'>2</span> It will be removed in the future.  sre was moved to re in version 2.5.
+<span class='lineno'>3</span> &quot;&quot;&quot;</span>
+<span class='lineno'>4</span> 
+<span class='lineno'>5</span> import warnings
+<span class='lineno'>6</span> <a href='/Users/yinwang/results/html/warnings.py.html#warnings', id ='1071999368', onmouseover='highlight(1183240718)', title='warnings :: warnings'>warnings</a>.<a href='/Users/yinwang/results/html/distutils/tests/test_dist.py.html#warnings.warn', id ='1071999398', onmouseover='highlight("1925087465","29090782")', title='warnings.warn :: {(str, <DeprecationWarning>, int) -> None | (str, <GetPassWarning>, int) -> None | (str, <FutureWarning>, int) -> None | (str, <PendingDeprecationWarning>, int) -> None | (str, <WSGIWarning>, int) -> None | (str, <RuntimeWarning>, int) -> None | (str, <UserWarning>, int) -> None | }'>warn</a>(&quot;The sre module is deprecated, please import re.&quot;,
+<span class='lineno'>7</span>               <a href='http://docs.python.org/reference/datamodel#org/yinwang/pysonar/types', id ='1072000266', onmouseover='highlight(2016665419)', title='__builtin__.DeprecationWarning :: <DeprecationWarning>'>DeprecationWarning</a>, <span class='number'>2</span>)
+<span class='lineno'>8</span> 
+<span class='lineno'>9</span> from re import *
+<span class='lineno'>10</span> from re import __all__
+<span class='lineno'>11</span> 
+<span class='lineno'>12</span> # old pickles expect the _compile() reconstructor in this module
+<span class='lineno'>13</span> from re import _compile
+</pre></td></tr></table></body></html>
